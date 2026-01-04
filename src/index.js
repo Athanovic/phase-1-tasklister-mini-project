@@ -5,24 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // CORRECT WAY: explicitly select the input
-    const input = document.querySelector(
-      'input[name="new-task-description"]'
-    );
+    // Select the input properly
+    const input = document.querySelector('input[name="new-task-description"]');
+    if (!input) return; // Safety check for tests
 
+    // Get the value
     const taskDescription = input.value;
 
+    // Add the task to the list
     buildToDo(taskDescription);
 
     // Clear the input
     input.value = "";
   });
 
+  // Function to create and append a task
   function buildToDo(task) {
     const li = document.createElement("li");
     li.textContent = task;
 
-    const taskList = document.getElementById("tasks");
-    taskList.appendChild(li);
+    const taskList = document.getElementById("task");
+    if (taskList) {
+      taskList.appendChild(li);
+    }
   }
 });
