@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    // ✅ CORRECT WAY: explicitly select the input
+    // CORRECT WAY: explicitly select the input
     const input = document.querySelector(
       'input[name="new-task-description"]'
     );
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const li = document.createElement("li");
     li.textContent = task;
 
-    const taskList = document.getElementById("task");
+    const taskList = document.getElementById("tasks");
     taskList.appendChild(li);
   }
 });
