@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const li = document.createElement("li");
     li.textContent = task;
 
-    const taskList = document.getElementById("task");
+    const taskList = document.getElementById("tasks");
     if (taskList) {
       taskList.appendChild(li);
     }
